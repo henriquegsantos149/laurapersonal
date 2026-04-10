@@ -192,7 +192,7 @@ function ExerciseLogger({ partExercise: pe, assignmentId, studentId }: {
             <p className="text-sm font-semibold">{pe.exercise?.name}</p>
             {pe.exercise?.video_url && (
               <a href={pe.exercise.video_url} target="_blank" rel="noopener noreferrer">
-                <Video className="w-3.5 h-3.5 text-violet-500 hover:text-violet-700" />
+                <Video className="w-3.5 h-3.5 text-orange-500 hover:text-orange-700" />
               </a>
             )}
             {allSaved && <CheckCircle2 className="w-4 h-4 text-green-500" />}
@@ -241,7 +241,7 @@ function ExerciseLogger({ partExercise: pe, assignmentId, studentId }: {
             />
             <Button
               size="sm"
-              className={`h-8 text-xs w-full ${set.saved ? 'bg-green-100 text-green-700 hover:bg-green-100' : 'bg-violet-600 hover:bg-violet-700'}`}
+              className={`h-8 text-xs w-full ${set.saved ? 'bg-green-100 text-green-700 hover:bg-green-100' : 'bg-orange-600 hover:bg-orange-700'}`}
               onClick={() => saveSet(set.set_number)}
               disabled={set.saved || loadingSet === set.set_number}
             >

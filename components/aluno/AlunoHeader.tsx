@@ -7,7 +7,7 @@ import { Profile } from '@/lib/types'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
-import { Dumbbell, LayoutDashboard, TrendingUp, LogOut } from 'lucide-react'
+import { Dumbbell, TrendingUp, LogOut } from 'lucide-react'
 import { toast } from 'sonner'
 
 const navItems = [
@@ -28,28 +28,32 @@ export function AlunoHeader({ profile }: { profile: Profile }) {
   }
 
   return (
-    <header className="bg-white border-b sticky top-0 z-10 shadow-sm">
+    <header className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
       <div className="max-w-2xl mx-auto px-4">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 bg-violet-600 rounded-lg flex items-center justify-center">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 bg-orange-500 rounded-xl flex items-center justify-center shadow-sm">
               <Dumbbell className="w-4 h-4 text-white" />
             </div>
-            <span className="font-bold text-sm">Laura Personal</span>
+            <span className="font-bold text-sm text-gray-900">Laura Personal</span>
           </div>
 
-          {/* Nav */}
+          {/* Nav tabs — always visible, icon + label on sm+ */}
           <nav className="flex items-center gap-1">
             {navItems.map(({ href, label, icon: Icon, exact }) => {
               const active = exact ? pathname === href : pathname.startsWith(href)
               return (
                 <Link key={href} href={href}>
-                  <div className={cn(
-                    'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors',
-                    active ? 'bg-violet-50 text-violet-700 font-medium' : 'text-gray-600 hover:text-gray-900'
-                  )}>
-                    <Icon className="w-4 h-4" />
+                  <div
+                    className={cn(
+                      'flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-150 min-h-[40px] min-w-[40px] justify-center',
+                      active
+                        ? 'bg-orange-500 text-white shadow-sm'
+                        : 'text-gray-500 hover:bg-orange-50 hover:text-orange-600'
+                    )}
+                  >
+                    <Icon className="w-4 h-4 flex-shrink-0" />
                     <span className="hidden sm:inline">{label}</span>
                   </div>
                 </Link>
@@ -57,14 +61,20 @@ export function AlunoHeader({ profile }: { profile: Profile }) {
             })}
           </nav>
 
-          {/* User */}
-          <div className="flex items-center gap-2">
-            <Avatar className="w-7 h-7">
-              <AvatarFallback className="bg-violet-100 text-violet-700 text-xs font-medium">
+          {/* User avatar + logout */}
+          <div className="flex items-center gap-1.5">
+            <Avatar className="w-8 h-8">
+              <AvatarFallback className="bg-orange-100 text-orange-700 text-xs font-bold">
                 {profile.name.slice(0, 2).toUpperCase()}
               </AvatarFallback>
             </Avatar>
-            <Button variant="ghost" size="icon" className="w-8 h-8 text-gray-400 hover:text-red-500" onClick={handleLogout}>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="w-9 h-9 text-gray-400 hover:text-red-500 hover:bg-red-50"
+              onClick={handleLogout}
+              aria-label="Sair"
+            >
               <LogOut className="w-4 h-4" />
             </Button>
           </div>

@@ -24,7 +24,7 @@ export default async function TreinosPage() {
           <p className="text-muted-foreground mt-1">{programs?.length ?? 0} programa(s)</p>
         </div>
         <Link href="/admin/treinos/novo">
-          <Button className="bg-violet-600 hover:bg-violet-700">
+          <Button className="bg-orange-600 hover:bg-orange-700">
             <Plus className="w-4 h-4 mr-2" />
             Novo Programa
           </Button>
@@ -68,7 +68,7 @@ export default async function TreinosPage() {
           <BookOpen className="w-12 h-12 text-gray-300 mx-auto mb-4" />
           <p className="text-muted-foreground">Nenhum programa criado ainda</p>
           <Link href="/admin/treinos/novo" className="mt-4 inline-block">
-            <Button className="bg-violet-600 hover:bg-violet-700 mt-4">
+            <Button className="bg-orange-600 hover:bg-orange-700 mt-4">
               Criar primeiro programa
             </Button>
           </Link>

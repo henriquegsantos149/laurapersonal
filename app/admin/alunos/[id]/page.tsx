@@ -29,7 +29,7 @@ export default async function AlunoDetailPage({ params }: { params: Promise<{ id
       </Link>
 
       <div className="flex items-center gap-4 mb-8">
-        <div className="w-14 h-14 bg-violet-100 rounded-full flex items-center justify-center text-violet-700 text-xl font-bold">
+        <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center text-orange-700 text-xl font-bold">
           {aluno.name.slice(0, 2).toUpperCase()}
         </div>
         <div>

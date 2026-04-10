@@ -18,9 +18,9 @@ export default async function AlunoLayout({ children }: { children: React.ReactN
   if (profile.role === 'admin') redirect('/admin')
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-dvh bg-gray-50">
       <AlunoHeader profile={profile} />
-      <main className="max-w-2xl mx-auto px-4 pb-12">
+      <main className="max-w-2xl mx-auto px-4 pb-16 pt-4">
         {children}
       </main>
     </div>

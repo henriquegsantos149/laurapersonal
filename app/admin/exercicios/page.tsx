@@ -28,7 +28,7 @@ export default async function ExerciciosPage() {
           <p className="text-muted-foreground mt-1">{exercises?.length ?? 0} exercício(s)</p>
         </div>
         <Link href="/admin/exercicios/novo">
-          <Button className="bg-violet-600 hover:bg-violet-700">
+          <Button className="bg-orange-600 hover:bg-orange-700">
             <Plus className="w-4 h-4 mr-2" />
             Novo Exercício
           </Button>
@@ -53,8 +53,8 @@ export default async function ExerciciosPage() {
                         </div>
                         {ex.video_url && (
                           <a href={ex.video_url} target="_blank" rel="noopener noreferrer" title="Ver vídeo">
-                            <div className="w-8 h-8 bg-violet-100 rounded-lg flex items-center justify-center flex-shrink-0 hover:bg-violet-200">
-                              <Video className="w-4 h-4 text-violet-600" />
+                            <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0 hover:bg-orange-200">
+                              <Video className="w-4 h-4 text-orange-600" />
                             </div>
                           </a>
                         )}
@@ -71,7 +71,7 @@ export default async function ExerciciosPage() {
           <Dumbbell className="w-12 h-12 text-gray-300 mx-auto mb-4" />
           <p className="text-muted-foreground">Nenhum exercício cadastrado ainda</p>
           <Link href="/admin/exercicios/novo" className="mt-4 inline-block">
-            <Button className="bg-violet-600 hover:bg-violet-700 mt-4">
+            <Button className="bg-orange-600 hover:bg-orange-700 mt-4">
               Adicionar primeiro exercício
             </Button>
           </Link>

@@ -113,7 +113,7 @@ export default function NovoExercicioPage() {
             </div>
 
             <div className="flex gap-3 pt-2">
-              <Button type="submit" className="flex-1 bg-violet-600 hover:bg-violet-700" disabled={loading}>
+              <Button type="submit" className="flex-1 bg-orange-600 hover:bg-orange-700" disabled={loading}>
                 {loading ? 'Salvando...' : 'Salvar exercício'}
               </Button>
               <Link href="/admin/exercicios">

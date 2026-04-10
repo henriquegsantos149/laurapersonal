@@ -94,9 +94,9 @@ export default async function AlunoTreinoPage() {
 
       {/* Orientação da semana */}
       {currentGuideline && (
-        <Card className="border-l-4 border-violet-400">
+        <Card className="border-l-4 border-orange-400">
           <CardContent className="p-4">
-            <p className="text-xs font-semibold text-violet-600 uppercase tracking-wider mb-1">Orientação da semana</p>
+            <p className="text-xs font-semibold text-orange-600 uppercase tracking-wider mb-1">Orientação da semana</p>
             <p className="text-sm font-bold">{currentGuideline.sets}</p>
             <p className="text-sm text-muted-foreground">{currentGuideline.intensity}</p>
           </CardContent>

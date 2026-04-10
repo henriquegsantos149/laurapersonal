@@ -51,7 +51,7 @@ export default function NovoAlunoPage() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <UserPlus className="w-5 h-5 text-violet-600" />
+            <UserPlus className="w-5 h-5 text-orange-600" />
             Novo Aluno
           </CardTitle>
         </CardHeader>
@@ -92,7 +92,7 @@ export default function NovoAlunoPage() {
               <p className="text-xs text-muted-foreground">O aluno poderá alterar depois</p>
             </div>
             <div className="flex gap-3 pt-2">
-              <Button type="submit" className="flex-1 bg-violet-600 hover:bg-violet-700" disabled={loading}>
+              <Button type="submit" className="flex-1 bg-orange-600 hover:bg-orange-700" disabled={loading}>
                 {loading ? 'Criando...' : 'Criar aluno'}
               </Button>
               <Link href="/admin/alunos">

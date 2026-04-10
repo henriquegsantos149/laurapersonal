@@ -28,7 +28,7 @@ export default async function AlunosPage() {
           <p className="text-muted-foreground mt-1">{alunos?.length ?? 0} aluno(s) cadastrado(s)</p>
         </div>
         <Link href="/admin/alunos/novo">
-          <Button className="bg-violet-600 hover:bg-violet-700">
+          <Button className="bg-orange-600 hover:bg-orange-700">
             <UserPlus className="w-4 h-4 mr-2" />
             Novo Aluno
           </Button>
@@ -44,7 +44,7 @@ export default async function AlunosPage() {
                 <CardContent className="p-5">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-violet-100 rounded-full flex items-center justify-center text-violet-700 font-semibold">
+                      <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-700 font-semibold">
                         {aluno.name.slice(0, 2).toUpperCase()}
                       </div>
                       <div>
@@ -57,9 +57,9 @@ export default async function AlunosPage() {
                   </div>
 
                   {activeAssignment ? (
-                    <div className="bg-violet-50 rounded-lg p-3">
+                    <div className="bg-orange-50 rounded-lg p-3">
                       <p className="text-xs text-muted-foreground mb-1">Programa atual</p>
-                      <p className="text-sm font-medium text-violet-800">{activeAssignment.program?.name}</p>
+                      <p className="text-sm font-medium text-orange-800">{activeAssignment.program?.name}</p>
                       <Badge variant="outline" className="mt-1.5 text-xs">
                         Semana {activeAssignment.current_week}
                       </Badge>
@@ -83,7 +83,7 @@ export default async function AlunosPage() {
           <Users className="w-12 h-12 text-gray-300 mx-auto mb-4" />
           <p className="text-muted-foreground">Nenhum aluno cadastrado ainda</p>
           <Link href="/admin/alunos/novo" className="mt-4 inline-block">
-            <Button className="bg-violet-600 hover:bg-violet-700 mt-4">
+            <Button className="bg-orange-600 hover:bg-orange-700 mt-4">
               Cadastrar primeiro aluno
             </Button>
           </Link>

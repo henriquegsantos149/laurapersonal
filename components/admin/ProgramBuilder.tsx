@@ -155,7 +155,7 @@ export function ProgramBuilder({ program, exercises }: Props) {
                     defaultValue={day.name}
                     onBlur={(e) => saveDay(day.id, 'name', e.target.value)}
                     onClick={(e) => e.stopPropagation()}
-                    className="text-sm font-semibold border-0 p-0 h-auto bg-transparent outline-none focus:ring-1 focus:ring-violet-300 rounded px-1 max-w-xs"
+                    className="text-sm font-semibold border-0 p-0 h-auto bg-transparent outline-none focus:ring-1 focus:ring-orange-300 rounded px-1 max-w-xs"
                   />
                 </div>
                 <div className="flex items-center gap-2">
@@ -190,7 +190,7 @@ export function ProgramBuilder({ program, exercises }: Props) {
                           key={part.id + part.name}
                           defaultValue={part.name}
                           onBlur={(e) => savePart(part.id, 'name', e.target.value)}
-                          className="flex-1 text-sm font-medium border-0 p-0 h-auto bg-transparent outline-none focus:ring-1 focus:ring-violet-300 rounded px-1"
+                          className="flex-1 text-sm font-medium border-0 p-0 h-auto bg-transparent outline-none focus:ring-1 focus:ring-orange-300 rounded px-1"
                           placeholder="Nome da parte..."
                         />
                         <Button
@@ -208,7 +208,7 @@ export function ProgramBuilder({ program, exercises }: Props) {
                         defaultValue={part.notes ?? ''}
                         onBlur={(e) => savePart(part.id, 'notes', e.target.value)}
                         placeholder="Instruções (ex: Realizar 3 Rodadas)..."
-                        className="w-full text-xs border rounded px-2 py-1 mb-3 h-8 bg-white outline-none focus:ring-1 focus:ring-violet-300"
+                        className="w-full text-xs border rounded px-2 py-1 mb-3 h-8 bg-white outline-none focus:ring-1 focus:ring-orange-300"
                       />
 
                       {/* Lista de exercícios */}
@@ -220,7 +220,7 @@ export function ProgramBuilder({ program, exercises }: Props) {
                                 <span className="text-sm font-medium">{pe.exercise?.name}</span>
                                 {pe.exercise?.video_url && (
                                   <a href={pe.exercise.video_url} target="_blank" rel="noopener noreferrer">
-                                    <Video className="w-3.5 h-3.5 text-violet-500" />
+                                    <Video className="w-3.5 h-3.5 text-orange-500" />
                                   </a>
                                 )}
                               </div>
@@ -229,7 +229,7 @@ export function ProgramBuilder({ program, exercises }: Props) {
                                 defaultValue={pe.notes ?? ''}
                                 onBlur={(e) => saveExerciseNotes(pe.id, e.target.value)}
                                 placeholder="Observações (ex: com pés paralelos)..."
-                                className="w-full mt-1.5 h-7 text-xs border rounded px-2 bg-white outline-none focus:ring-1 focus:ring-violet-300"
+                                className="w-full mt-1.5 h-7 text-xs border rounded px-2 bg-white outline-none focus:ring-1 focus:ring-orange-300"
                               />
                             </div>
                             <Button
@@ -268,7 +268,7 @@ export function ProgramBuilder({ program, exercises }: Props) {
 
           <Button
             variant="outline"
-            className="w-full border-dashed text-violet-600 hover:text-violet-700 hover:border-violet-300"
+            className="w-full border-dashed text-orange-600 hover:text-orange-700 hover:border-orange-300"
             onClick={addDay}
           >
             <Plus className="w-4 h-4 mr-2" />
@@ -315,7 +315,7 @@ function AddExerciseSelect({
       </Select>
       <Button
         size="sm"
-        className="h-8 text-xs bg-violet-600 hover:bg-violet-700"
+        className="h-8 text-xs bg-orange-600 hover:bg-orange-700"
         disabled={!selected}
         onClick={() => { onAdd(selected); setSelected('') }}
       >
@@ -376,7 +376,7 @@ function WeeklyGuidelinesEditor({
             </div>
             <Button
               size="sm"
-              className="mt-3 h-7 text-xs bg-violet-600 hover:bg-violet-700"
+              className="mt-3 h-7 text-xs bg-orange-600 hover:bg-orange-700"
               onClick={() => onSave(w, form[w].sets, form[w].intensity)}
             >
               Salvar semana {w}

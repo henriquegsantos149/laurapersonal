@@ -73,7 +73,7 @@ export function AssignProgramForm({ studentId, programs }: Props) {
       <Button
         onClick={handleAssign}
         disabled={!programId || loading}
-        className="bg-violet-600 hover:bg-violet-700"
+        className="bg-orange-600 hover:bg-orange-700"
       >
         {loading ? 'Atribuindo...' : 'Atribuir'}
       </Button>
