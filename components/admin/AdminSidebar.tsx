@@ -39,7 +39,7 @@ function NavLinks({
   onNavigate?: () => void
 }) {
   return (
-    <nav className="flex-1 p-4 space-y-1">
+    <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
       {navItems.map(({ href, label, icon: Icon, exact }) => {
         const active = exact ? pathname === href : pathname.startsWith(href)
         return (
@@ -64,7 +64,7 @@ function NavLinks({
 
 function SidebarLogo() {
   return (
-    <div className="p-5 flex items-center gap-3">
+    <div className="p-5 flex items-center gap-3 flex-shrink-0">
       <div className="w-9 h-9 bg-orange-500 rounded-xl flex items-center justify-center shadow-sm">
         <Dumbbell className="w-5 h-5 text-white" />
       </div>
@@ -91,7 +91,7 @@ export function AdminSidebar({ profile }: { profile: Profile }) {
 
   function UserFooter() {
     return (
-      <>
+      <div className="flex-shrink-0">
         <Separator />
         <div className="p-4 flex items-center gap-3">
           <Avatar className="w-8 h-8">
@@ -113,31 +113,37 @@ export function AdminSidebar({ profile }: { profile: Profile }) {
             <LogOut className="w-4 h-4" />
           </Button>
         </div>
-      </>
+      </div>
     )
   }
 
   return (
     <>
-      {/* ─────── Desktop Sidebar ─────── */}
-      <aside className="hidden md:flex w-64 bg-white border-r border-gray-100 flex-col shadow-sm h-screen sticky top-0">
+      {/* ─────────────────────────────────────────
+          DESKTOP: Fixed sidebar on the left
+          Visible only on md+ screens
+      ───────────────────────────────────────── */}
+      <aside className="hidden md:flex fixed left-0 top-0 h-full w-64 bg-white border-r border-gray-100 flex-col shadow-sm z-40">
         <SidebarLogo />
         <Separator />
         <NavLinks pathname={pathname} />
         <UserFooter />
       </aside>
 
-      {/* ─────── Mobile Top Bar ─────── */}
-      <header className="md:hidden flex items-center justify-between px-4 h-14 bg-white border-b border-gray-100 shadow-sm sticky top-0 z-50">
+      {/* ─────────────────────────────────────────
+          MOBILE: Fixed top bar (full width, above content)
+          Visible only on < md screens
+      ───────────────────────────────────────── */}
+      <header className="md:hidden fixed top-0 left-0 right-0 flex items-center justify-between px-4 h-14 bg-white border-b border-gray-100 shadow-sm z-50">
         <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 bg-orange-500 rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-orange-500 rounded-xl flex items-center justify-center shadow-sm">
             <Dumbbell className="w-4 h-4 text-white" />
           </div>
           <span className="font-bold text-sm text-gray-900">Laura Personal</span>
         </div>
 
         <div className="flex items-center gap-2">
-          <Avatar className="w-7 h-7">
+          <Avatar className="w-8 h-8">
             <AvatarFallback className="bg-orange-100 text-orange-700 text-xs font-bold">
               {profile.name.slice(0, 2).toUpperCase()}
             </AvatarFallback>

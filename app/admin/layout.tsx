@@ -17,14 +17,22 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   if (profile?.role !== 'admin') redirect('/aluno')
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
-      {/* AdminSidebar renders desktop sidebar AND mobile top bar internally */}
+    <div className="min-h-dvh bg-gray-50">
+      {/*
+        AdminSidebar renders:
+        - On desktop (md+): a fixed left sidebar (w-64)
+        - On mobile (<md): a fixed top header (h-14)
+        Both are out of normal flow (position: fixed).
+      */}
       <AdminSidebar profile={profile} />
-      <main className="flex-1 overflow-y-auto min-w-0">
-        {/* On mobile, add pt for the sticky top bar (h-14) */}
-        <div className="md:pt-0">
-          {children}
-        </div>
+
+      {/*
+        Main content:
+        - md+: offset by sidebar width (ml-64)
+        - mobile: offset by top bar height (pt-14)
+      */}
+      <main className="md:ml-64 pt-14 md:pt-0 min-h-dvh">
+        {children}
       </main>
     </div>
   )
