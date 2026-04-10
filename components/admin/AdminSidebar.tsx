@@ -144,12 +144,13 @@ export function AdminSidebar({ profile }: { profile: Profile }) {
           </Avatar>
 
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-            <SheetTrigger asChild>
+            <SheetTrigger>
               <Button
                 variant="ghost"
                 size="icon"
                 className="w-9 h-9 text-gray-600"
                 aria-label="Abrir menu"
+                onClick={() => setMobileOpen(true)}
               >
                 <Menu className="w-5 h-5" />
               </Button>
